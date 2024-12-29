@@ -4,7 +4,7 @@ version: 0.0.4
 homepage: https://github.com/shinewanna/BackgroundSmsPlugin
 
 environment:
-  sdk: '>=3.1.1 < 4.0.0'
+  sdk: ">=3.1.1 <4.0.0"
   flutter: ">=3.13.3"
 
 dependencies:

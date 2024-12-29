@@ -24,11 +24,16 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.j.background_sms"
 
-    compileSdkVersion 28
+    compileSdkVersion 34
 
-    defaultConfig {
-        minSdkVersion 16
+      defaultConfig {
+        minSdkVersion 17
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
     lintOptions {
         disable 'InvalidPackage'
     }
