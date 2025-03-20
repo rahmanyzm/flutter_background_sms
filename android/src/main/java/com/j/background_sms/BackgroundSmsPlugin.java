@@ -41,8 +41,10 @@ public class BackgroundSmsPlugin implements FlutterPlugin, MethodCallHandler {
   // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
   // depending on the user's project. onAttachedToEngine or registerWith must both be defined
   // in the same class.
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "background_sms");
+  @Override
+  public void onAttachedToEngine(FlutterPluginBinding binding) {
+    // Set up the plugin using the new API
+    MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "background_sms");
     channel.setMethodCallHandler(new BackgroundSmsPlugin());
   }
 
