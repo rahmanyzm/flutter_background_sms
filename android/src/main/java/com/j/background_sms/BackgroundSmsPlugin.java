@@ -15,7 +15,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** BackgroundSmsPlugin */
 public class BackgroundSmsPlugin implements FlutterPlugin, MethodCallHandler {
@@ -24,13 +23,6 @@ public class BackgroundSmsPlugin implements FlutterPlugin, MethodCallHandler {
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
-
-  @Override
-  public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "background_sms");
-    channel.setMethodCallHandler(this);
-  }
-
 
   // This static function is optional and equivalent to onAttachedToEngine. It supports the old
   // pre-Flutter-1.12 Android projects. You are encouraged to continue supporting
